@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
+import Container from '@/components/layouts/Container'
 import { cn } from '@/lib/utils'
 import RecoilProvider from '@/providers/RecoilProvider'
 import TanstackProvider from '@/providers/TanstackProvider'
@@ -38,7 +39,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <RecoilProvider>
-            <TanstackProvider>{children}</TanstackProvider>
+            <TanstackProvider>
+              <Container>{children}</Container>
+            </TanstackProvider>
           </RecoilProvider>
         </ThemeProvider>
       </body>
